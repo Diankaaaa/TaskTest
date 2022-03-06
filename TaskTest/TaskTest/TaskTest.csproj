@@ -58,6 +58,7 @@
     <Compile Include="Model\DefaultDialogService.cs" />
     <Compile Include="Model\IDialogService.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="ViewModel\ViewModelTask2.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
