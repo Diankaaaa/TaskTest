@@ -14,6 +14,7 @@ namespace TaskTest.ViewModel
     public class ViewModelTask2 : INotifyPropertyChanged
     {
         IDialogService dialogService;
+        IFileService fileService;
         private RelayCommand openFileDialog;
         public RelayCommand OpenFileDialog
         {
@@ -22,9 +23,16 @@ namespace TaskTest.ViewModel
                 return openFileDialog ??
                     (openFileDialog = new RelayCommand(obj =>
                     {
-                        if (dialogService.OpenFileDialog() == true)
+                        try
                         {
-                            
+                            if (dialogService.OpenFileDialog() == true)
+                            {
+                                fileService.SaveFactorial(dialogService.FilePath);
+                            }
+                        }
+                        catch(Exception ex)
+                        {
+                            dialogService.ShowMessage(ex.Message);
                         }
                     }));   
             }

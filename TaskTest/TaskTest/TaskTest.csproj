@@ -56,7 +56,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Model\DefaultDialogService.cs" />
+    <Compile Include="Model\Factorial.cs" />
     <Compile Include="Model\IDialogService.cs" />
+    <Compile Include="Model\IFileService.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\ViewModelTask2.cs" />
     <Page Include="MainWindow.xaml">
