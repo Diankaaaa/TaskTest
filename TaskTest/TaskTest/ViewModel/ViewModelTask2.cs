@@ -8,16 +8,37 @@ using System.Runtime.CompilerServices;
 using System.Collections.ObjectModel;
 using System.Data;
 using TaskTest.Model;
+using TaskTest.View;
 
 namespace TaskTest.ViewModel
 {
     public class ViewModelTask2 : INotifyPropertyChanged
     {
 
+        private RelayCommand openWindowTask3;
+        public RelayCommand OpenWindowTask3
+        {
+            get
+            {
+                return openWindowTask3 ??
+                    (openWindowTask3 = new RelayCommand(obj =>
+                    {
+                        try
+                        {
+                            Task3 window = new Task3();
+                            window.Show();
+                        }
+                        catch (Exception ex)
+                        {
+                            dialogService.ShowMessage(ex.Message);
+                        }
+                    }));
+            }
+        }
+
         public ViewModelTask2(IDialogService dialogService)
         {
             this.dialogService = dialogService;
-            this.fileService = fileService;
         }
 
         IDialogService dialogService;
@@ -36,8 +57,8 @@ namespace TaskTest.ViewModel
                             {
                                 var factorals = fileService.OpenFile(dialogService.FilePath);
                                 factorals.Clear();
-                                foreach (var d in factorals)
-                                    factorals.Add(d);
+                                foreach (var p in factorals)
+                                    factorals.Add(p);
                                 dialogService.ShowMessage("Open file!");
                                 
                             }
