@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TaskTest.ViewModel;
+using TaskTest.Model;
 
 namespace TaskTest
 {
@@ -23,6 +25,7 @@ namespace TaskTest
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ViewModelTask2(new DefaultDialogService());
         }
     }
 }

@@ -8,7 +8,7 @@ namespace TaskTest.Model
 {
     public interface IFileService
     {
-        List<Factorial> OpenFactorial(string fileName);
-        void SaveFactorial(string fileName);
+        List<Factorial> OpenFile(string fileName);
+        void Save(string fileName, List<Factorial> factorial);
     }
 }

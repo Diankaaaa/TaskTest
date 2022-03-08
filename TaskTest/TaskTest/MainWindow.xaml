@@ -28,7 +28,7 @@
             </StackPanel>
 
             <StackPanel Grid.Column="1">
-                <Button x:Name="DATA_SOURSE_FILE_2" Content="Выберите файл источника данных" Padding="10" Margin="10,5" Foreground="White" Background="#FF686868"/>
+                <Button x:Name="DATA_SOURSE_FILE_2" Command="{Binding OpenFileDialog}" Content="Выберите файл источника данных" Padding="10" Margin="10,5" Foreground="White" Background="#FF686868"/>
                 <Button x:Name="TARGET_FILE_2" Content="Выберите целевой файл" Padding="10" Margin="10,5" Foreground="White" Background="#FF686868"/>
             </StackPanel>
         </Grid>

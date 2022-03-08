@@ -13,6 +13,13 @@ namespace TaskTest.ViewModel
 {
     public class ViewModelTask2 : INotifyPropertyChanged
     {
+
+        public ViewModelTask2(IDialogService dialogService)
+        {
+            this.dialogService = dialogService;
+            this.fileService = fileService;
+        }
+
         IDialogService dialogService;
         IFileService fileService;
         private RelayCommand openFileDialog;
@@ -27,7 +34,12 @@ namespace TaskTest.ViewModel
                         {
                             if (dialogService.OpenFileDialog() == true)
                             {
-                                fileService.SaveFactorial(dialogService.FilePath);
+                                var factorals = fileService.OpenFile(dialogService.FilePath);
+                                factorals.Clear();
+                                foreach (var d in factorals)
+                                    factorals.Add(d);
+                                dialogService.ShowMessage("Open file!");
+                                
                             }
                         }
                         catch(Exception ex)
