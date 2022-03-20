@@ -9,8 +9,8 @@ namespace TaskTest.Model
     public interface IDialogService
     {
         void ShowMessage(string message); //Показ сообщения
-        string FilePath { get; set; } //Путь к выбранному файлу
+        string FilePath { get; set; } //Путь к файлу
         bool OpenFileDialog(); //Открытие файла
-        bool SaveFileDialog(); //Сохранение файла
+        bool SaveFileDialog(); //сохранение файла
     }
 }

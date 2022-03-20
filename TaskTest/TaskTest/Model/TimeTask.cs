@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace TaskTest.Model
 {
-    public interface IFileService
+    public class TimeTask
     {
-        List<Factorial> OpenFile(string fileName);
-        void Save(string fileName, List<Factorial> factorial);
+        DateTime times { get; set; }
+        public TimeTask()
+        { 
+        }
     }
 }

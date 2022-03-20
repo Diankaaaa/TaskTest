@@ -8,7 +8,10 @@ namespace TaskTest.Model
 {
     public class Factorial
     {
-        private int number;
-        public int Number { get; set; }
+        private long number { get; set; }
+        public Factorial(long num) //Конструктор
+        {
+            this.number = num;
+        }
     }
 }

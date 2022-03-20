@@ -9,7 +9,7 @@ namespace TaskTest.ViewModel
 {
     public class RelayCommand : ICommand
     {
-        private Action<Object> execute;
+        private Action<object> execute;
         private Func<object, bool> canExecute;
 
         public event EventHandler CanExecuteChanged
