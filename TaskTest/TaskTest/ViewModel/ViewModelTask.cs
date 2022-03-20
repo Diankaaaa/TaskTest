@@ -29,8 +29,13 @@ namespace TaskTest.ViewModel
                 i = i * int.Parse(num.ToString());
                 s = i.ToString();
             }
-            
         });
+            //task2.Start();
+            //task2.Id;
+            //task2.IsCompleted;
+            //task2.Status;
+            //task2.Wait();
+
 
 
         private Task Task2()
@@ -47,7 +52,11 @@ namespace TaskTest.ViewModel
             DateTime dt = Convert.ToDateTime(time);
             String militaryDate = dt.ToString("HH:mm:sstt");
         });
-
+        //task3.Start();
+        //task3.Id;
+        //task3.IsCompleted;
+        //task3.Status;
+        //task3.Wait();
 
         private Task Task3()
         {
