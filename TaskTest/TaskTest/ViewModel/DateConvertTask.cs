@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TaskTest.Model
+namespace TaskTest.ViewModel
 {
-    public class TimeTask
+    internal class DateConvertTask
     {
-        DateTime times { get; set; }
-        public TimeTask()
-        { 
-        }
+
     }
 }

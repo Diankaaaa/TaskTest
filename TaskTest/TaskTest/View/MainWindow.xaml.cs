@@ -26,7 +26,6 @@ namespace TaskTest
         public MainWindow()
         {
             InitializeComponent();
-            DataContext = new ViewModelTask();
         }
 
     }

@@ -4,17 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TaskTest"
+        xmlns:view="clr-namespace:TaskTest.View"
+        xmlns:viewmodel="clr-namespace:TaskTest.ViewModel"
         mc:Ignorable="d"
             Title="TestTask" Height="300" Width="900" Background="#FF252526">
+    <Window.Resources>
+        <viewmodel:MainViewModel x:Key="MainWindowView"/>
+    </Window.Resources>
+    
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="0" Margin="10">
-            <Button x:Name="START" Command="{Binding FactorialTask}"  Content="Start" Padding="20" Background="#FF686868" Foreground="White" FontSize="16"/>
+        <StackPanel Grid.Row="0" Margin="10" DataContext="{StaticResource ResourceKey=MainWindowView}">
+            <Button Command="{Binding Path=Click}"  Content="Start" Padding="20" Background="#FF686868" Foreground="White" FontSize="16"/>
         </StackPanel>
 
         <Grid Grid.Row="1">
@@ -35,11 +42,13 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0">
-                <TextBlock x:Name="TASK1" Text="Результат работы потока 1" Margin="10" Padding="10" Height="68" Foreground="White" Background="#FF686868"/>
+            
+            <StackPanel Grid.Column="0" DataContext="{StaticResource ResourceKey=MainWindowView}">
+                <view:FactorialControl Width="280" DataContext="{Binding Factorials}"/>
             </StackPanel>
+            
             <StackPanel Grid.Column="1">
-                <TextBlock x:Name="TASK2" Text="Результат работы потока 2" Margin="10" Padding="10" Height="68" Foreground="White" Background="#FF686868"/>
+                
             </StackPanel>
         </Grid>
     </Grid>
