@@ -19,4 +19,10 @@
             </TextBlock>
         </DataTemplate>
     </UserControl.Resources>
+	<Border BorderThickness="2" BorderBrush="Blue" CornerRadius="5">
+		<StackPanel Margin="10">
+			<TextBlock Text="{Binding DateInput}"/>
+			<TextBlock Text="{Binding Factorial}"/>
+		</StackPanel>
+	</Border>
 </UserControl>

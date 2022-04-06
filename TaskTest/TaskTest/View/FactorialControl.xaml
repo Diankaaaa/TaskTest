@@ -21,8 +21,8 @@
     </UserControl.Resources>
     <Border BorderThickness="2" BorderBrush="Blue" CornerRadius="5">
         <StackPanel Margin="10">
-            <TextBlock Text="{Binding Number}"/>
-            <TextBlock Text="{Binding Factorial}"/>
+            <TextBlock Text="{Binding Number}" Foreground="White"/>
+            <TextBlock Text="{Binding Factorial}" Foreground="White"/>
         </StackPanel>
     </Border>
     
