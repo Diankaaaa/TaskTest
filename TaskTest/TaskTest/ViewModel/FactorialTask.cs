@@ -21,6 +21,7 @@ namespace TaskTest.ViewModel
         {
             Number = Read();
             Factorial = Fact(Number);
+            Factorial = Write();
         }
         private long Fact(int n)
         {
@@ -44,5 +45,14 @@ namespace TaskTest.ViewModel
             return res;
         }
 
+        private long Write()
+        {
+            string text = Factorial.ToString();
+            using (StreamWriter writer = new StreamWriter("output2.txt"))
+            {
+                writer.WriteLineAsync(text);
+            }
+            return long.Parse(text);
+        }
     }
 }

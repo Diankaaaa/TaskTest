@@ -17,18 +17,18 @@ namespace TaskTest.ViewModel
     {
         public string DateInput { get;set;}
         public string DateOut { get; set; }
+        public string OutFile { get; set; }
 
         public DateConvertTask()
         {
             DateInput = Read();
             DateOut = Converting(DateInput);
+            DateOut = Write();
         }
 
         private string Converting(string dateTime)
         {
             DateTime date = Convert.ToDateTime(dateTime);
-            //DateTime dateTimes = DateTime.ParseExact(dateTime, "hh:mm:sstt", 
-            //System.Globalization.CultureInfo.InvariantCulture); 
             string result = date.ToString("T");
             return result;
         }
@@ -39,6 +39,16 @@ namespace TaskTest.ViewModel
             using (StreamReader reader = new StreamReader("input3.txt"))
             {
                 text = reader.ReadToEnd();
+            }
+            return text;
+        }
+
+        private string Write()
+        {
+            string text = DateInput;
+            using (StreamWriter writer = new StreamWriter("output3.txt"))
+            {
+                writer.WriteLineAsync(text);
             }
             return text;
         }
