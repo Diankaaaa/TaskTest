@@ -26,7 +26,7 @@ namespace TaskTest.ViewModel
             DateOut = Write();
         }
 
-        private string Converting(string dateTime)
+        private string Converting(string dateTime) 
         {
             DateTime date = Convert.ToDateTime(dateTime);
             string result = date.ToString("T");
