@@ -45,7 +45,7 @@ namespace TaskTest.ViewModel
 
         private string Write()
         {
-            string text = DateInput;
+            string text = DateOut;
             using (StreamWriter writer = new StreamWriter("output3.txt"))
             {
                 writer.WriteLineAsync(text);
