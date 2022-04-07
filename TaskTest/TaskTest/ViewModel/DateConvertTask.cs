@@ -21,14 +21,16 @@ namespace TaskTest.ViewModel
         public DateConvertTask()
         {
             DateInput = Read();
-            DateOut = Convert(DateInput);
+            DateOut = Converting(DateInput);
         }
 
-        private string Convert(string dateTime)
+        private string Converting(string dateTime)
         {
-            DateTime dateTimes = DateTime.ParseExact(dateTime, "hh:mm:sstt", 
-        System.Globalization.CultureInfo.InvariantCulture); 
-            return dateTime;
+            DateTime date = Convert.ToDateTime(dateTime);
+            //DateTime dateTimes = DateTime.ParseExact(dateTime, "hh:mm:sstt", 
+            //System.Globalization.CultureInfo.InvariantCulture); 
+            string result = date.ToString("T");
+            return result;
         }
         private string Read()
         {

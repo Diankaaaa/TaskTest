@@ -9,10 +9,10 @@
     <UserControl.Resources>
         <DataTemplate x:Key="DateConvertTask">
             <TextBlock>
-                <Run Text="#"/>
-                <Run Text="#"/>
-                <Run Text="#"/>
-                <Run Text="#"/>
+                <Run Text="Чтение фалйа"/>
+                <Run Text="{Binding DateInput}"/>
+                <Run Text="Конвертирование даты"/>
+                <Run Text="{Binding DateOut}"/>
                 <Run Text="#"/>
                 <Run Text="#"/>
                 <Run Text="#"/>
@@ -21,8 +21,8 @@
     </UserControl.Resources>
 	<Border BorderThickness="2" BorderBrush="Blue" CornerRadius="5">
 		<StackPanel Margin="10">
-			<TextBlock Text="{Binding DateInput}"/>
-			<TextBlock Text="{Binding Factorial}"/>
+			<TextBlock Text="{Binding DateInput}" Foreground="White"/>
+            <TextBlock Text="{Binding DateOut}" Foreground="White"/>
 		</StackPanel>
 	</Border>
 </UserControl>

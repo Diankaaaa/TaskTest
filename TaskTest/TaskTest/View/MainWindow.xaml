@@ -46,9 +46,9 @@
             <StackPanel Grid.Column="0" DataContext="{StaticResource ResourceKey=MainWindowView}">
 				<view:FactorialControl Width="280" DataContext="{Binding Factorials}"/>
             </StackPanel>
-            
-            <StackPanel Grid.Column="1">
-				<view:ConvertDate Width="280" DataContext="{Binding Dates}"/>
+
+            <StackPanel Grid.Column="1" DataContext="{StaticResource ResourceKey=MainWindowView}">
+                <view:ConvertDate Width="280" DataContext="{Binding Dates}"/>
             </StackPanel>
         </Grid>
     </Grid>
